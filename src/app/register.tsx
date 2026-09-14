@@ -23,6 +23,7 @@ export default function Register() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -47,6 +48,11 @@ export default function Register() {
 
     if (password.length < 6) {
       setError("A senha precisa ter pelo menos 6 caracteres.");
+      return;
+    }
+
+    if (password !== confirmPassword) {
+      setError("As senhas não coincidem.");
       return;
     }
 
@@ -88,6 +94,7 @@ export default function Register() {
             <Field label="E-mail" placeholder="exemplo@email.com" keyboardType="email-address" value={email} onChangeText={setEmail} />
             <Field label="Senha" placeholder="Crie sua senha" secureTextEntry value={password} onChangeText={setPassword} />
             <PasswordStrength password={password} />
+            <Field label="Confirmar senha" placeholder="Digite sua senha novamente" secureTextEntry value={confirmPassword} onChangeText={setConfirmPassword} />
           </View>
           <Pressable disabled={isSubmitting} onPress={handleRegister} style={({ pressed }) => [styles.button, pressed && styles.pressed]}>
             {isSubmitting ? <ActivityIndicator color="#F2F4FF" /> : <Text style={styles.buttonText}>Criar minha conta</Text>}

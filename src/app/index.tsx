@@ -1,12 +1,27 @@
 import { Image } from "expo-image";
 import { useRouter } from "expo-router";
 import { StatusBar } from "expo-status-bar";
-import React from "react";
+import { onAuthStateChanged } from "firebase/auth";
+import React, { useEffect, useState } from "react";
 import { Pressable, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { auth } from "../lib/firebase";
 
 export default function Index() {
   const router = useRouter();
+  const [checkingSession, setCheckingSession] = useState(true);
+
+  useEffect(() => {
+    return onAuthStateChanged(auth, (user) => {
+      if (user) {
+        router.replace("/home" as never);
+      } else {
+        setCheckingSession(false);
+      }
+    });
+  }, [router]);
+
+  if (checkingSession) return null;
 
   return (
     <SafeAreaView style={styles.container}>

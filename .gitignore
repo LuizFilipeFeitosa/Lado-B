@@ -38,6 +38,10 @@ yarn-error.*
 
 example
 
+# generated firebase stuff
+firebase.json
+firestore.rules
+
 # generated native folders
 /ios
 /android
