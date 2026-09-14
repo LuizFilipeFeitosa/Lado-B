@@ -8,5 +8,6 @@ Este repositório é dedicado à disciplina de Desenvolvimento de Sistemas de In
 
 # Equipe e orientação 
 **Docentes Orientadores:** Prof. Dr. Gabriel Alves de Albuquerque Júnior; Profa. Dra. Maria da Conceição Moraes Batista
+
 **Discentes:** João Pedro, Larissa Galindo e Luiz Filipe
   
