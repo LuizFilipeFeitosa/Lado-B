@@ -1,6 +1,14 @@
   <div align="center">
+  
 
   # Lado B
+ <img src="assets/images/icon.png" alt= "Logo do aplicativo mobile" width=350px >
+<br>
+ 
+<img src= "https://img.shields.io/badge/TypeScript-1e1512?style=flat-square&logo=typescript&logoColor=c8a882" alt="Typescript" height=100px>
+
+<img src= "https://img.shields.io/badge/React_Native-1e1512?style=flat-square&logo=react&logoColor=c8a882" alt="React Native" height=100px>
+
 ---
 <div align="left">
   
